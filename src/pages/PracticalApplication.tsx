@@ -9,8 +9,8 @@ const PracticalApplication: React.FC = () => {
         <h1>Practical Application</h1>
         <p>
           This project has a practical application in the field of physics by
-          ploting and being able to vissulise the diffrence between displacement
-          per second and acclaration per second.
+          ploting and being able to visualise the difference between
+          displacement per second and acceleration per second.
         </p>
       </div>
     </>
