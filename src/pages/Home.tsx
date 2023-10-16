@@ -15,7 +15,7 @@ const Home: React.FC = () => {
       <Navbar />
       <div className="App">
         <Forms />
-        <Container fluid>
+        <Container id="cars" fluid>
           <Row style={{ backgroundColor: "#ccc" }}>
             <Car position={carOnePosition} />
           </Row>

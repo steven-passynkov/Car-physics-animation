@@ -118,7 +118,7 @@ const Forms: React.FC<{}> = ({}) => {
             </Row>
             <Row>
               <Col>
-                <Button onClick={() => accelerateCars(formikProps.values)}>
+                <Button href="#cars" onClick={() => accelerateCars(formikProps.values)}>
                   Accelerate
                 </Button>
               </Col>
