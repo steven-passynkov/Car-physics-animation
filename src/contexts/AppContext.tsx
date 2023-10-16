@@ -54,7 +54,7 @@ const AppContextProvider = ({ children }: AppContextProviderProps) => {
     acceleration: [{ name: 0, carOne: 0, carTwo: 0 }],
   });
 
-  const [carOneSpeed, setCarOneSpeed] = useState<number>(0);
+  const [carOneVelocity, setCarOneVelocity] = useState<number>(0);
   const [carTwoAcceleration, setCarTwoAcceleration] = useState<number>(0);
 
   const [time, setTime] = useState(0);
@@ -65,7 +65,7 @@ const AppContextProvider = ({ children }: AppContextProviderProps) => {
     carOneSpeed: number,
     carTwoAcceleration: number
   ) => {
-    setCarOneSpeed(carOneSpeed);
+    setCarOneVelocity(carOneSpeed);
     setCarTwoAcceleration(carTwoAcceleration);
     setCarOnePosition(carOneSpeed);
     setCarTwoPosition(carTwoAcceleration);
@@ -95,7 +95,7 @@ const AppContextProvider = ({ children }: AppContextProviderProps) => {
 
   useEffect(() => {
     if (Math.pow(carTwoPosition, 2) < window.screen.width) {
-      setCarOnePosition((prevPosition) => prevPosition + carOneSpeed);
+      setCarOnePosition((prevPosition) => prevPosition + carOneVelocity);
       setCarTwoPosition((prevPosition) => Math.pow(prevPosition, 2));
     } else {
       setIsRunning(false);
@@ -113,7 +113,7 @@ const AppContextProvider = ({ children }: AppContextProviderProps) => {
           ...data.velocity,
           {
             name: time,
-            carOne: carOneSpeed,
+            carOne: carOneVelocity,
             carTwo: carTwoAcceleration * time,
           },
         ],
@@ -121,7 +121,7 @@ const AppContextProvider = ({ children }: AppContextProviderProps) => {
           ...data.acceleration,
           {
             name: time,
-            carOne: time === 1 ? carOneSpeed : 0,
+            carOne: time === 1 ? carOneVelocity : 0,
             carTwo:
               carTwoAcceleration === 1
                 ? time === 1
@@ -131,8 +131,6 @@ const AppContextProvider = ({ children }: AppContextProviderProps) => {
           },
         ],
       });
-      console.log(data);
-      console.log("time", time);
     }
   }, [time]);
 
