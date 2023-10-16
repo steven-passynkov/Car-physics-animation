@@ -10,7 +10,7 @@ const PracticalApplication: React.FC = () => {
         <p>
           This project has a practical application in the field of physics by
           ploting and being able to visualise the difference between
-          displacement per second and acceleration per second.
+          velocity per second and acceleration per second.
         </p>
       </div>
     </>

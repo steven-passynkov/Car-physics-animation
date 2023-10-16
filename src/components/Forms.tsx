@@ -70,7 +70,7 @@ const Forms: React.FC<{}> = ({}) => {
                   controlId="validationFormik101"
                   className="position-relative"
                 >
-                  <Form.Label>Speed</Form.Label>
+                  <Form.Label>Velocity</Form.Label>
                   <InputGroup className="mb-2">
                     <Field
                       type="number"
