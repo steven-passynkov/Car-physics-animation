@@ -51,7 +51,7 @@ const Forms: React.FC<{}> = ({}) => {
   });
 
   return (
-    <Container id="inputs" fluid style={{ marginBottom: "150px" }}>
+    <Container fluid style={{ marginBottom: "150px" }}>
       <Formik
         validationSchema={schema}
         validateOnChange={false}

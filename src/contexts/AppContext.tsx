@@ -8,7 +8,7 @@ type AppContextType = {
   carOnePosition: number;
   carTwoPosition: number;
   data: {
-    distance: {
+    displacement: {
       name: number;
       carOne: number;
       carTwo: number;
@@ -33,7 +33,7 @@ const AppContextProvider = ({ children }: AppContextProviderProps) => {
   const [carOnePosition, setCarOnePosition] = useState<number>(0);
   const [carTwoPosition, setCarTwoPosition] = useState<number>(0);
   const [data, setData] = useState<{
-    distance: {
+    displacement: {
       name: number;
       carOne: number;
       carTwo: number;
@@ -49,7 +49,7 @@ const AppContextProvider = ({ children }: AppContextProviderProps) => {
       carTwo: number;
     }[];
   }>({
-    distance: [{ name: 0, carOne: 0, carTwo: 0 }],
+    displacement: [{ name: 0, carOne: 0, carTwo: 0 }],
     velocity: [{ name: 0, carOne: 0, carTwo: 0 }],
     acceleration: [{ name: 0, carOne: 0, carTwo: 0 }],
   });
@@ -71,7 +71,7 @@ const AppContextProvider = ({ children }: AppContextProviderProps) => {
     setCarTwoPosition(carTwoAcceleration);
     setTime(0);
     setData({
-      distance: [{ name: 0, carOne: 0, carTwo: 0 }],
+      displacement: [{ name: 0, carOne: 0, carTwo: 0 }],
       velocity: [{ name: 0, carOne: 0, carTwo: 0 }],
       acceleration: [{ name: 0, carOne: 0, carTwo: 0 }],
     });
@@ -105,8 +105,8 @@ const AppContextProvider = ({ children }: AppContextProviderProps) => {
   useEffect(() => {
     if (time !== 0) {
       setData({
-        distance: [
-          ...data.distance,
+        displacement: [
+          ...data.displacement,
           { name: time, carOne: carOnePosition, carTwo: carTwoPosition },
         ],
         velocity: [
